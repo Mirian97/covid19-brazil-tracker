@@ -21,7 +21,8 @@ export const NavItem: FC<NavItemProps> = ({
       className={cn(
         'flex items-center gap-2 rounded-lg px-4 py-3 transition-all duration-200',
         'hover:bg-accent group',
-        isActive ? 'bg-accent text-primary font-medium' : 'text-foreground/70'
+        isActive ? 'bg-accent text-primary font-medium' : 'text-foreground/70',
+        className
       )}
       {...restProps}
     >
