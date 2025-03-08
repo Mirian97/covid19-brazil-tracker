@@ -1,3 +1,6 @@
+import { Header } from '@/components/header'
+import { Sidebar } from '@/components/sidebar'
+import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 import './globals.css'
@@ -20,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
-      <body className={`${geistSans.variable} antialiased`}>{children}</body>
+      <body className={cn('flex min-h-screen flex-col antialiased', geistSans.variable)}>
+        <Header />
+        <Sidebar />
+        {children}
+      </body>
     </html>
   )
 }
