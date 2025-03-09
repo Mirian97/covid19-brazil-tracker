@@ -7,8 +7,14 @@ import { StateDetail } from './_components/state-detail'
 import { StateList } from './_components/state-list'
 
 export default function PerStatesPage() {
-  const { statesData, stateData, selectedState, setSelectedState, isLoadingState } =
-    useStateReport()
+  const {
+    statesData,
+    stateData,
+    selectedState,
+    isLoadingStates,
+    setSelectedState,
+    isLoadingState
+  } = useStateReport()
 
   return (
     <>
@@ -28,7 +34,7 @@ export default function PerStatesPage() {
         {selectedState?.value ? (
           <StateDetail stateData={stateData} isLoadingState={isLoadingState} />
         ) : (
-          <StateList statesData={statesData} />
+          <StateList states={statesData} isLoading={isLoadingStates} />
         )}
       </div>
     </>
