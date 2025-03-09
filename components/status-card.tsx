@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { formatNumber } from '@/utils/formatNumber'
 import { ComponentProps, ElementType, FC } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 
@@ -25,7 +26,7 @@ export const StatusCard: FC<StatusCardProps> = ({
         <div
           className={cn('animate-slide-up text-2xl font-bold delay-100', valueClassName)}
         >
-          {typeof value === 'number' ? value.toLocaleString('pt-BR') : value}
+          {typeof value === 'number' ? formatNumber(value) : value}
         </div>
       </CardContent>
     </Card>
