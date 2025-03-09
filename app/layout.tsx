@@ -1,6 +1,6 @@
 import { Header } from '@/components/header'
 import { Sidebar } from '@/components/sidebar'
-import { cn } from '@/lib/utils'
+import { AllProviders } from '@/providers/all-providers'
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 import './globals.css'
@@ -23,10 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
-      <body className={cn('flex min-h-screen flex-col antialiased', geistSans.variable)}>
-        <Header />
-        <Sidebar />
-        {children}
+      <body className={geistSans.variable}>
+        <AllProviders>
+          <Header />
+          <div className='flex flex-1'>
+            <Sidebar />
+            <main className='animate-fade-in flex flex-1 flex-col overflow-y-auto p-6'>
+              {children}
+            </main>
+          </div>
+        </AllProviders>
       </body>
     </html>
   )
