@@ -3,8 +3,7 @@ import { StatusCard } from '@/components/status-card'
 import { HookStateReport } from '@/hooks/useStateReport'
 import { FC } from 'react'
 
-interface StateDetailProps
-  extends Pick<HookStateReport, 'stateData' | 'isLoadingState'> {}
+type StateDetailProps = Pick<HookStateReport, 'stateData' | 'isLoadingState'>
 
 export const StateDetail: FC<StateDetailProps> = ({ isLoadingState, stateData }) => {
   return isLoadingState ? (

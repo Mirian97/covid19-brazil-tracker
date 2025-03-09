@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { HookStateReport } from '@/hooks/useStateReport'
 import { FC } from 'react'
 
-interface StateListProps extends Pick<HookStateReport, 'statesData'> {}
+type StateListProps = Pick<HookStateReport, 'statesData'>
 
 export const StateList: FC<StateListProps> = ({ statesData }) => {
   return (
