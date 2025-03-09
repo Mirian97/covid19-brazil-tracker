@@ -1,13 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { HookStateReport } from '@/hooks/useStateReport'
+import { StateStats } from '@/types/stats-type'
 import { FC } from 'react'
 
-type StateListProps = Pick<HookStateReport, 'statesData'>
+type StateListProps = {
+  states: StateStats[] | undefined
+  isLoading: boolean
+}
 
-export const StateList: FC<StateListProps> = ({ statesData }) => {
-  return (
+export const StateList: FC<StateListProps> = ({ states, isLoading }) => {
+  return isLoading ? null : states?.length === 0 ? (
+    <div className='animate-fade-in py-8 text-center'>
+      <p className='text-muted-foreground'>Nenhum dado encontrado para esta data.</p>
+    </div>
+  ) : (
     <div className='mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-      {statesData?.map((state, index: number) => (
+      {states?.map((state, index: number) => (
         <Card
           key={state.uid}
           className='animate-scale-in'
