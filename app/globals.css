@@ -22,7 +22,7 @@
   --accent: 217 90% 95%;
   --accent-foreground: 222.2 47.4% 11.2%;
 
-  --destructive: 0 85% 60%;
+  --destructive: 0 85% 55%;
   --destructive-foreground: 210 40% 98%;
 
   --border: 214.3 31.8% 91.4%;
@@ -65,6 +65,19 @@
       @apply absolute right-0 h-full w-8 opacity-0;
     }
   }
+
+  .container {
+    width: 100%;
+    padding-inline: 2rem;
+  }
+
+  .colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+  }
+
+  .colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+  }
 }
 
 @theme {
@@ -73,10 +86,13 @@
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-destructive: hsl(var(--destructive));
   --color-border: hsl(var(--border));
   --color-primary: hsl(var(--primary));
   --color-accent: hsl(var(--accent));
   --color-ring: hsl(var(--ring));
+  --color-input: hsl(var(--input));
+  --color-muted: hsl(var(--muted));
   --animate-fade-in: fade-in 0.3s ease-out;
   --animate-fade-out: fade-out 0.3s ease-out;
   --animate-slide-in-right: slide-in-right 0.3s ease-out;
@@ -136,17 +152,4 @@
       opacity: 1;
     }
   }
-}
-
-.container {
-  width: 100%;
-  padding-inline: 2rem;
-}
-
-.colored-toast.swal2-icon-success {
-  background-color: #a5dc86 !important;
-}
-
-.colored-toast.swal2-icon-error {
-  background-color: #f27474 !important;
 }
