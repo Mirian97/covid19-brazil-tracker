@@ -26,9 +26,9 @@ export default function RootLayout({
       <body className={geistSans.variable}>
         <AllProviders>
           <Header />
-          <div className='flex flex-1'>
+          <div className='flex flex-1 grid-cols-[256px_1fr] flex-col overflow-hidden md:grid'>
             <Sidebar />
-            <main className='animate-fade-in flex flex-1 flex-col overflow-y-auto p-6'>
+            <main className='animate-fade-in flex w-full flex-1 flex-col overflow-y-auto p-6 md:col-start-2'>
               {children}
             </main>
           </div>
