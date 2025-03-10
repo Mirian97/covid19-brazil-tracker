@@ -1,6 +1,7 @@
 import { Loading } from '@/components/loading'
 import { StatusCard } from '@/components/status-card'
 import { HookStateReport } from '@/hooks/useStateReport'
+import { AlertCircle, Ban, Skull, Users } from 'lucide-react'
 import { FC } from 'react'
 
 type StateDetailProps = Pick<HookStateReport, 'stateData' | 'isLoadingState'>
@@ -16,26 +17,24 @@ export const StateDetail: FC<StateDetailProps> = ({ isLoadingState, stateData })
           Última atualização: {new Date(stateData?.datetime).toLocaleString('pt-BR')}
         </p>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4'>
+          <StatusCard icon={Users} title='Casos Confirmados' value={stateData?.cases} />
           <StatusCard
-            title='Casos Confirmados'
-            value={stateData?.cases}
-            className='border-l-4 border-l-blue-500'
-          />
-          <StatusCard
+            color='destructive'
+            icon={Skull}
             title='Óbitos'
             value={stateData?.deaths}
-            className='border-l-4 border-l-red-500'
-            valueClassName='text-red-600'
           />
           <StatusCard
+            color='warning'
+            icon={AlertCircle}
             title='Suspeitos'
             value={stateData?.suspects}
-            className='border-l-4 border-l-yellow-500'
           />
           <StatusCard
+            color='success'
+            icon={Ban}
             title='Descartados'
             value={stateData?.refuses}
-            className='border-l-4 border-l-green-500'
           />
         </div>
       </div>
