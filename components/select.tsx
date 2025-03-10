@@ -13,15 +13,17 @@ export interface SelectProps
 
 export const selectTheme: ThemeConfig = (theme) => ({
   ...theme,
-  borderRadius: 8,
+  borderRadius: 10,
   spacing: {
     ...theme.spacing,
     controlHeight: 40
   },
   colors: {
     ...theme.colors,
-    primary: '#115ab0',
-    neutral60: 'var(--color-muted-foreground)'
+    primary: '#9ab5f5',
+    neutral60: 'var(--color-muted-foreground)',
+    neutral50: 'var(--color-muted-foreground)',
+    neutral20: 'var(--color-input)'
   }
 })
 
@@ -45,8 +47,11 @@ export const CustomSelect: FC<SelectProps> = ({
       styles={{
         control: (styles) => ({
           ...styles,
-          fontSize: 14,
-          boxShadow: 'none'
+          fontSize: 14
+        }),
+        option: (styles, { isSelected }) => ({
+          ...styles,
+          color: isSelected ? 'var(--color-foreground)' : styles.color
         })
       }}
       components={{
