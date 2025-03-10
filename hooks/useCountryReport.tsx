@@ -14,21 +14,16 @@ const useCountryReport = () => {
     select: (data) => data.data
   })
 
-  console.log(data)
-
-  const countries = useMemo(() => {
-    if (search.length) {
-      return (
-        data?.filter((entry) =>
-          entry?.country?.toLowerCase().includes(search.toLowerCase())
-        ) || []
-      )
-    }
-    return data || []
-  }, [search])
+  const filteredCountries = useMemo(
+    () =>
+      data?.filter((entry) =>
+        entry?.country?.toLowerCase().includes(search.toLowerCase())
+      ),
+    [search]
+  )
 
   return {
-    countries,
+    countries: search.length ? filteredCountries : data,
     isLoading,
     search,
     setSearch
