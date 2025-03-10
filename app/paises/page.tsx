@@ -22,7 +22,7 @@ export default function PerCountriesPage() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className='flex w-full flex-1 flex-col'>
+      <div className='flex max-w-7xl flex-1 flex-col'>
         <CountryList countries={countries} isLoading={isLoading} />
       </div>
     </>
