@@ -19,7 +19,7 @@ export default function PerDatePage() {
         value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)}
       />
-      <div className='flex w-full flex-1 flex-col'>
+      <div className='flex max-w-7xl flex-1 flex-col'>
         <StateList
           states={data}
           isLoading={isLoading}

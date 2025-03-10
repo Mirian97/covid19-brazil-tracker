@@ -30,7 +30,7 @@ export default function PerStatesPage() {
         placeholder='Selecione um estado'
         onChange={(value) => setSelectedState(value)}
       />
-      <div className='flex w-full flex-1 flex-col'>
+      <div className='flex max-w-7xl flex-1 flex-col'>
         {selectedState?.value ? (
           <StateDetail stateData={stateData} isLoadingState={isLoadingState} />
         ) : (
