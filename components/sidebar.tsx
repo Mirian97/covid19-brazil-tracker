@@ -7,7 +7,7 @@ export const Sidebar = () => {
   const activeSegment = useSelectedLayoutSegment()
 
   return (
-    <aside className='sticky inset-y-0 top-1 hidden w-64 flex-col gap-1 border-r p-4 md:flex'>
+    <aside className='fixed inset-0 left-0 z-10 hidden w-64 flex-col gap-1 overflow-y-auto border-r p-4 pt-20 md:flex'>
       {menuList.map((item) => (
         <NavItem
           key={item.to}
