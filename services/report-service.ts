@@ -62,6 +62,21 @@ export class ReportService {
       throw error
     }
   }
+
+  async getOneCountry(country: string): Promise<{ data: CountryStats }> {
+    try {
+      const response = await api.get<{ data: CountryStats }>(`/${country}`)
+      return response.data
+    } catch (error) {
+      toast({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Não foi possível carregar dados por países'
+      })
+      console.error('Error fetching country data:', error)
+      throw error
+    }
+  }
 }
 
 export const reportService = new ReportService()
