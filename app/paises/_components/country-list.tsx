@@ -19,6 +19,7 @@ export const CountryList: FC<CountryListProps> = ({ isLoading, countries }) => {
           key={state.country}
           className="animate-scale-in"
           style={{ animationDelay: `${index * 100}ms` }}
+          data-testid="country-card"
         >
           <CardHeader className="pb-2">
             <CardTitle className="text-lg">{state.country}</CardTitle>

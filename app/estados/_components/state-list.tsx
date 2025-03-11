@@ -25,6 +25,7 @@ export const StateList: FC<StateListProps> = ({
           key={state.uid}
           className="animate-scale-in"
           style={{ animationDelay: `${index * 100}ms` }}
+          data-testid="state-card"
         >
           <CardHeader className="pb-2">
             <CardTitle className="text-lg">{state.state}</CardTitle>
