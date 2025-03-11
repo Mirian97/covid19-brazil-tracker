@@ -1,10 +1,10 @@
-'use client'
-import { CustomSelect } from '@/components/select'
-import { Title } from '@/components/title'
-import { states } from '@/constants/states'
-import useStateReport from '@/hooks/useStateReport'
-import { StateDetail } from './_components/state-detail'
-import { StateList } from './_components/state-list'
+"use client"
+import { CustomSelect } from "@/components/select"
+import { Title } from "@/components/title"
+import { states } from "@/constants/states"
+import useStateReport from "@/hooks/useStateReport"
+import { StateDetail } from "./_components/state-detail"
+import { StateList } from "./_components/state-list"
 
 export default function PerStatesPage() {
   const {
@@ -19,18 +19,18 @@ export default function PerStatesPage() {
   return (
     <>
       <Title
-        title='Dados por Estado'
-        description='Visualize os dados da COVID-19 por estado brasileiro.'
+        title="Dados por Estado"
+        description="Visualize os dados da COVID-19 por estado brasileiro."
       />
       <CustomSelect
         isClearable
         options={states}
         value={selectedState}
-        className='max-w-md'
-        placeholder='Selecione um estado'
+        className="max-w-md"
+        placeholder="Selecione um estado"
         onChange={(value) => setSelectedState(value)}
       />
-      <div className='flex max-w-7xl flex-1 flex-col'>
+      <div className="flex max-w-7xl flex-1 flex-col">
         {selectedState?.value ? (
           <StateDetail stateData={stateData} isLoadingState={isLoadingState} />
         ) : (
