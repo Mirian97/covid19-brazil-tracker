@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: 0 0% 100%;
@@ -54,7 +54,7 @@
     @apply scroll-smooth;
   }
 
-  input[type='date'] {
+  input[type="date"] {
     @apply relative bg-contain bg-right bg-no-repeat pr-40 pl-4 placeholder:text-gray-100;
 
     background-size: 16px;
