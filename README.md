@@ -1,131 +1,131 @@
 # 🕵️‍♀️😷 COVID-19 Brazil Tracker
 
-Uma aplicação web para visualizar e interagir com dados da COVID-19 no Brasil e no mundo, utilizando a [COVID-19 Brazil API](https://github.com/wcota/covid19br). Este projeto foi construído com **Next.js**, **React**, e **Tailwind CSS**, oferecendo uma interface moderna e responsiva para explorar estatísticas por estado, data, país e até enviar dados via formulário.
+A web application for visualizing and interacting with COVID-19 data in Brazil and worldwide, using the [COVID-19 Brazil API](https://github.com/wcota/covid19br). This project was built with **Next.js**, **React**, and **Tailwind CSS**, offering a modern and responsive interface to explore statistics by state, date, country, and even submit data via a form.
 
 ---
 
-## 📋 Visão Geral
+## 📋 Overview
 
-O **COVID-19 Brazil Tracker** permite aos usuários:
+The **COVID-19 Brazil Tracker** allows users to:
 
-- Visualizar um balanço geral dos casos, óbitos e recuperados no Brasil.
-- Explorar dados detalhados por estados brasileiros ou por datas específicas.
-- Pesquisar estatísticas de COVID-19 em outros países.
-- Preencher e enviar formulários com dados personalizados sobre a pandemia.
+- View a general overview of cases, deaths, and recoveries in Brazil.
+- Explore detailed data by Brazilian states or specific dates.
+- Search for COVID-19 statistics in other countries.
+- Fill out and submit custom data forms related to the pandemic.
 
-A aplicação é otimizada para desktop e mobile, com animações suaves e gráficos interativos, utilizando bibliotecas como **Recharts** para visualização de dados e **React Query** para gerenciamento de estado assíncrono.
-
----
-
-## ✨ Funcionalidades
-
-- **Dashboard**: Exibe um resumo nacional com gráficos dos 10 estados mais afetados.
-- **Dados por Estado**: Lista todos os estados ou detalha um estado específico selecionado.
-- **Dados por Data**: Mostra estatísticas filtradas por uma data escolhida.
-- **Dados por Países**: Permite buscar e visualizar dados de países ao redor do mundo.
-- **Formulário**: Interface para envio de dados personalizados com validação via **Zod**.
-- **Testes Automatizados**: Inclui testes E2E com **Playwright** para garantir a funcionalidade.
+The application is optimized for desktop and mobile, with smooth animations and interactive charts, using libraries like **Recharts** for data visualization and **React Query** for asynchronous state management.
 
 ---
 
-## 🚀 Como Começar
+## ✨ Features
 
-### Pré-requisitos
+- **Dashboard**: Displays a national summary with charts of the 10 most affected states.
+- **Data by State**: Lists all states or details a specific selected state.
+- **Data by Date**: Shows statistics filtered by a chosen date.
+- **Data by Country**: Allows searching and viewing data from countries around the world.
+- **Form**: Interface for submitting custom data with validation via **Zod**.
+- **Automated Tests**: Includes E2E tests with **Playwright** to ensure functionality.
 
-- [Node.js](https://nodejs.org/) (v18 ou superior)
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - [Git](https://git-scm.com/)
 
-### Instalação
+### Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/Mirian97/covid19-brazil-tracker.git
    cd covid19-brazil-tracker
    ```
 
-2. Instale as dependências:
+2. Install dependencies:
 
    ```bash
    npm i
    ```
 
-3. Configure as variáveis de ambiente:
-   Crie um arquivo `.env` na raiz do projeto e adicione:
+3. Set up environment variables:
+   Create a `.env` file in the project root and add:
 
    ```env
    NEXT_PUBLIC_BASE_URL=https://covid19-brazil-api.now.sh/api/report/v1
    ```
 
-4. Inicie o servidor de desenvolvimento:
+4. Start the development server:
    ```bash
    npm run dev
    ```
-   A aplicação estará disponível em `http://localhost:3000`.
+   The application will be available at `http://localhost:3000`.
    <br/>
-   **OBSERVAÇÃO:** Caso queira acessar sem configurações extras, entre neste link <a href="https://covid19-brazil-tracker.vercel.app/dashboard">ao vivo e em cores</a>
+   **NOTE:** If you want to access it without extra setup, visit this <a href="https://covid19-brazil-tracker.vercel.app/dashboard">live link</a>.
 
 ---
 
-## 🛠️ Scripts Disponíveis
+## 🛠️ Available Scripts
 
-No diretório do projeto, você pode executar:
+In the project directory, you can run:
 
-- `npm run dev`: Inicia o servidor de desenvolvimento com Turbopack.
-- `npm run build`: Gera a versão de produção.
-- `npm run start`: Inicia a aplicação em modo produção.
-- `npm run lint`: Executa o linter para verificar o código.
-- `npx playwright test`: Executa os testes automatizados com Playwright.
+- `npm run dev`: Starts the development server with Turbopack.
+- `npm run build`: Generates the production build.
+- `npm run start`: Starts the application in production mode.
+- `npm run lint`: Runs the linter to check code quality.
+- `npx playwright test`: Runs automated tests with Playwright.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Project Structure
 
 ```
 covid19-brazil-tracker/
-├── app/                  # Páginas e componentes da aplicação
-│   ├── dashboard/        # Página de balanço geral
-│   ├── data/            # Página de dados por data
-│   ├── estados/         # Página de dados por estado
-│   ├── formulario/      # Página de formulário
-│   ├── paises/          # Página de dados por países
-│   ├── globals.css      # Estilos globais com Tailwind
-│   └── layout.tsx       # Layout raiz com cabeçalho e sidebar
-├── components/           # Componentes reutilizáveis
-│   ├── ui/              # Componentes de UI personalizados
-│   ├── header.tsx       # Cabeçalho da aplicação
-│   ├── sidebar.tsx      # Barra lateral de navegação
-│   └── status-card.tsx  # Cartão de status para exibir dados
-├── config/              # Configurações da aplicação
-│   ├── api.ts           # Configuração do Axios
-│   └── query-client.ts  # Configuração do React Query
-├── constants/           # Constantes como lista de estados e menu
-├── hooks/               # Hooks personalizados para busca de dados
-├── lib/                # Utilitários gerais
-├── providers/          # Provedores de contexto (ex.: React Query)
-├── services/           # Serviços para chamadas à API
-├── tests/              # Testes automatizados com Playwright
-├── types/             # Definições de tipos TypeScript
-├── public/            # Arquivos estáticos
-├── package.json       # Dependências e scripts
-├── tsconfig.json      # Configuração do TypeScript
-├── playwright.config.ts # Configuração do Playwright
-├── postcss.config.mjs  # Configuração do PostCSS com Tailwind
-└── README.md          # Este arquivo
+├── app/                  # Application pages and components
+│   ├── dashboard/        # General overview page
+│   ├── data/            # Data by date page
+│   ├── estados/         # Data by state page
+│   ├── formulario/      # Form page
+│   ├── paises/          # Data by country page
+│   ├── globals.css      # Global styles with Tailwind
+│   └── layout.tsx       # Root layout with header and sidebar
+├── components/           # Reusable components
+│   ├── ui/              # Custom UI components
+│   ├── header.tsx       # Application header
+│   ├── sidebar.tsx      # Navigation sidebar
+│   └── status-card.tsx  # Status card for displaying data
+├── config/              # Application configurations
+│   ├── api.ts           # Axios configuration
+│   └── query-client.ts  # React Query configuration
+├── constants/           # Constants like state list and menu
+├── hooks/               # Custom hooks for data fetching
+├── lib/                # General utilities
+├── providers/          # Context providers (e.g., React Query)
+├── services/           # Services for API calls
+├── tests/              # Automated tests with Playwright
+├── types/             # TypeScript type definitions
+├── public/            # Static files
+├── package.json       # Dependencies and scripts
+├── tsconfig.json      # TypeScript configuration
+├── playwright.config.ts # Playwright configuration
+├── postcss.config.mjs  # PostCSS configuration with Tailwind
+└── README.md          # This file
 ```
 
 ---
 
-## 🧪 Testes
+## 🧪 Tests
 
-O projeto inclui testes end-to-end com **Playwright** para verificar a funcionalidade das páginas principais. Exemplos de testes:
+The project includes end-to-end tests with **Playwright** to verify the functionality of the main pages. Examples of tests:
 
-- **Dashboard**: Verifica se o título e os gráficos são renderizados.
-- **Dados por Data**: Testa a busca por data e exibição de cartões de estado.
-- **Formulário**: Simula o envio de dados e verifica o log de saída.
+- **Dashboard**: Checks if the title and charts are rendered.
+- **Data by Date**: Tests date-based search and state card display.
+- **Form**: Simulates data submission and verifies output logs.
 
-Execute os testes com:
+Run the tests with:
 
 ```bash
 npx playwright test
@@ -133,59 +133,59 @@ npx playwright test
 
 ---
 
-## 🌐 Tecnologias Utilizadas
+## 🌐 Technologies Used
 
-### Dependências Principais
+### Main Dependencies
 
-- **[Next.js](https://nextjs.org/)**: Framework React com suporte a SSR e SSG.
-- **[React](https://reactjs.org/)**: Biblioteca para construção de interfaces.
-- **[Tailwind CSS](https://tailwindcss.com/)**: Framework de estilização utilitário.
-- **[React Query](https://tanstack.com/query)**: Gerenciamento de dados assíncronos.
-- **[Axios](https://axios-http.com/)**: Cliente HTTP para chamadas à API.
-- **[Recharts](https://recharts.org/)**: Biblioteca de gráficos.
-- **[Zod](https://zod.dev/)**: Validação de esquemas.
-- **[Playwright](https://playwright.dev/)**: Ferramenta de testes E2E.
+- **[Next.js](https://nextjs.org/)**: React framework with SSR and SSG support.
+- **[React](https://reactjs.org/)**: Library for building interfaces.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first styling framework.
+- **[React Query](https://tanstack.com/query)**: Asynchronous data management.
+- **[Axios](https://axios-http.com/)**: HTTP client for API calls.
+- **[Recharts](https://recharts.org/)**: Charting library.
+- **[Zod](https://zod.dev/)**: Schema validation.
+- **[Playwright](https://playwright.dev/)**: E2E testing tool.
 
 ### DevDependencies
 
-- **[TypeScript](https://www.typescriptlang.org/)**: Tipagem estática.
-- **[ESLint](https://eslint.org/)**: Linting para qualidade de código.
-- **[Prettier](https://prettier.io/)**: Formatação de código.
-- **[TailwindCSS Animate](https://github.com/jamiebuilds/tailwindcss-animate)**: Animações com Tailwind.
+- **[TypeScript](https://www.typescriptlang.org/)**: Static typing.
+- **[ESLint](https://eslint.org/)**: Code quality linting.
+- **[Prettier](https://prettier.io/)**: Code formatting.
+- **[TailwindCSS Animate](https://github.com/jamiebuilds/tailwindcss-animate)**: Tailwind animations.
 
-Veja todas as dependências em [`package.json`](./package.json).
-
----
-
-## 🎨 Estilização
-
-O projeto utiliza **Tailwind CSS** com um tema personalizado definido em `app/globals.css`. Variáveis CSS são usadas para cores, animações e fontes, garantindo consistência e facilidade de manutenção.
-
-Exemplo de animações:
-
-- `fade-in`: Transição de opacidade.
-- `scale-in`: Escala suave para entrada de elementos.
+See all dependencies in [`package.json`](./package.json).
 
 ---
 
-## 🤝 Contribuição
+## 🎨 Styling
 
-Contribuições são bem-vindas! Siga os passos abaixo:
+The project uses **Tailwind CSS** with a custom theme defined in `app/globals.css`. CSS variables are used for colors, animations, and fonts, ensuring consistency and ease of maintenance.
 
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature: `git checkout -b minha-feature`.
-3. Commit suas mudanças: `git commit -m "Adiciona minha feature"`.
-4. Envie para o repositório remoto: `git push origin minha-feature`.
-5. Abra um Pull Request.
+Example animations:
 
----
-
-## 📜 Licença
-
-Este projeto é licenciado sob a [MIT License](LICENSE.md). Veja o arquivo `LICENSE` para mais detalhes.
+- `fade-in`: Opacity transition.
+- `scale-in`: Smooth scaling for element entry.
 
 ---
 
-## 📧 Contato
+## 🤝 Contributing
 
-Desenvolvido por [Mirian97](https://github.com/Mirian97). Para dúvidas ou sugestões, abra uma issue ou entre em contato via GitHub.
+Contributions are welcome! Follow these steps:
+
+1. Fork the repository.
+2. Create a branch for your feature: `git checkout -b my-feature`.
+3. Commit your changes: `git commit -m "Add my feature"`.
+4. Push to the remote repository: `git push origin my-feature`.
+5. Open a Pull Request.
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE.md). See the `LICENSE` file for more details.
+
+---
+
+## 📧 Contact
+
+Developed by [Mirian97](https://github.com/Mirian97). For questions or suggestions, open an issue or contact via GitHub.
